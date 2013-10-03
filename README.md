@@ -11,8 +11,8 @@ a version from 06.12.12, and already needs updating.
 We started by doing everything manually, but then moved to extracting the data 
 from the PDF using code from [this Gist][gist] which was then extended
 to also find and parse the "Impressum" (Imprint/Legal contact information) of each site
-and attempt to grab an email address, running on [swiki][ScraperWiki].
-Missing emails, phone numbers and street addresses 
+and attempt to grab an email address, running on [swiki][ScraperWiki]. The extended script
+is in the scripts folder. Missing emails, phone numbers and street addresses 
 were taken manually. The working data set is on [Google Spreadsheets][gss].
 
 [wikipedia]: http://en.wikipedia.org/wiki/Healthcare_in_Germany
