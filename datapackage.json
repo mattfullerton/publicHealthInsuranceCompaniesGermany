@@ -1,44 +1,54 @@
 {
-  "name": "gdp",
-  "title": "Country, Regional and World GDP (Gross Domestic Product)",
-  "description": "Country, regional and world GDP in current US Dollars ($). Regional means collections of countries e.g. Europe & Central Asia. Data is sourced from the World Bank and turned into a standard normalized CSV.",
+  "name": "publicHealthInsuranceCompaniesGermany",
+  "title": "Public Health Insurances in Germany",
+  "description": "Name, States served, Internet address, Postal Address and Email Address of public health insurances in Germany. Data is sourced from the GKV-Spitzenverband and turned into a standard normalized CSV.",
   "licenses": [
     {
       "id": "odc-pddl",
       "url": "http://opendatacommons.org/licenses/pddl/"
     }
   ],
-  "keywords": [ "GDP", "World", "Gross Domestic Product", "Time series" ],
-  "version": "2011",
-  "last_updated": "2011-09-21",
-  "image": "http://assets.okfn.org/p/opendatahandbook/img/data-wrench.png",
+  "keywords": [ "health", "Germany", "contact"],
+  "version": "2012",
+  "last_updated": "2013-09-26",
   "sources": [{
-    "name": "World Bank and OECD",
-    "web": "http://data.worldbank.org/indicator/NY.GDP.MKTP.CD"
+    "name": "GKV-Spitzenverband",
+    "web": "http://www.gkv-spitzenverband.de/krankenversicherung/krankenversicherung_grundprinzipien/alle_gesetzlichen_krankenkassen/alle_gesetzlichen_krankenkassen.jsp"
   }],
   "resources": [
     {
-      "path": "data/gdp.csv",
+      "path": "data/GermanPublicHealthInsurances.csv",
       "schema": {
         "fields": [
           {
-            "id": "Country Name",
+            "id": "name",
+            "description": "Insurance Company Name",
             "type": "string"
           },
           {
-            "id": "Country Code",
-            "type": "string",
-            "foreignkey": "iso-3-geo-codes/id"
+            "id": "webaddress",
+            "description": "Web address, without http://"
+            "type": "string"
           },
           {
-            "id": "Year",
-            "type": "date",
-            "format": "yyyy"
+            "id": "states",
+            "description": "State(s) served or employee only",
+            "type": "string"
           },
           {
-            "id": "Value",
-            "description": "GDP in current USD", 
-            "type": "number"
+            "id": "email",
+            "description": "Email address or contact form link", 
+            "type": "string"
+          },
+          {
+            "id": "address",
+            "description": "Street Address", 
+            "type": "string"
+          },
+          {
+            "id": "phone",
+            "description": "Telephone number (International or from within Germany)", 
+            "type": "string"
           }
         ]
       }
