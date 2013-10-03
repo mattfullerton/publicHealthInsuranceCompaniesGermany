@@ -1,24 +1,25 @@
-Country, regional and world GDP in current US Dollars ($). Regional means
-collections of countries e.g. Europe & Central Asia. Data is sourced from the
-World Bank and turned into a standard normalized CSV (code can be found in
-process.py of data package repository).
+Name, States served, Internet address, Postal Address and Email Address of
+public health insurances in Germany. To understand how the health system
+in Germany works, please see [this Wikipedia article][wikipedia].
 
 ## Source
 
-The data is sourced from the World Bank (specifically [this dataset][current]) which
-in turn lists as sources: *World Bank national accounts data, and OECD National
-Accounts data files*.
+The data is sourced from a PDF made available by the [GKV-Spitzenverband][GKV]
+from their [online database of health insurances][db]. The dataset is based on 
+a version from 06.12.12, and already needs updating.
 
-Note that there are a variety of different GDP indicators on offer from the
-World Bank including:
+We started by doing everything manually, but then moved to extracting the data 
+from the PDF using code from [this Gist][gist] which was then extended
+to also find and parse the "Impressum" (Imprint/Legal contact information) of each site
+and attempt to grab an email address, running on [swiki][ScraperWiki].
+Missing emails, phone numbers and street addresses 
+were taken manually. The working data set is on [Google Spreadsheets][gss].
 
-* [GDP in current USD][current]
-* [GDP in constant USD (2000)][constant]
-* [GDP, PPP (constant 2005 international $)][ppp]
-* [GDP (constant LCU)][lcu]
+[wikipedia]: http://en.wikipedia.org/wiki/Healthcare_in_Germany
+[GKV]: http://www.gkv-spitzenverband.de/
+[db]: http://www.gkv-spitzenverband.de/krankenversicherung/krankenversicherung_grundprinzipien/alle_gesetzlichen_krankenkassen/alle_gesetzlichen_krankenkassen.jsp
+[gist]: https://gist.github.com/psychemedia/5800840
+[gss]: https://docs.google.com/spreadsheet/ccc?key=0Ak6K0pSAyW1gdE0tWGtFam9FdXB1TFUyM2I3bzVZSXc
+[swiki]: https://scraperwiki.com/‎
 
-[constant]: http://data.worldbank.org/indicator/NY.GDP.MKTP.KD
-[current]: http://data.worldbank.org/indicator/NY.GDP.MKTP.CD
-[ppp]: http://data.worldbank.org/indicator/NY.GDP.MKTP.PP.KD
-[lcu]: http://data.worldbank.org/indicator/NY.GDP.MKTP.KN
 
